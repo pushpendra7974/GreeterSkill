@@ -1,0 +1,23 @@
+{
+  "name": "greeter",
+  "version": "1.0.0",
+  "description": "Contains lambda function code for our greeter skill",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pushpendra7974/GreeterSkill.git"
+  },
+  "keywords": [
+    "Alexa Skill",
+    "Alexa Skill using Nodejs"
+  ],
+  "author": "Pushpendra Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pushpendra7974/GreeterSkill/issues"
+  },
+  "homepage": "https://github.com/pushpendra7974/GreeterSkill#readme"
+}
