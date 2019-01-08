@@ -1,2 +1,2 @@
 # GreeterSkill
-My First Greeting Alexa Skill
+This is my first Alexa Skill developed using Nodejs and Aws Lambda Functions
