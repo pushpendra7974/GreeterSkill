@@ -1,5 +1,5 @@
 # GreeterSkill
-This is my first Alexa Skill developed using Nodejs and Aws Lambda Functions.
+This is my first Alexa Skill developed using Nodejs and Aws Lambda Functions. The code written in this repository is the bare minimum code required to create an Alexa skill.
 
 Here are some important instructions for your support:
 
