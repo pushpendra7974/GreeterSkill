@@ -9,7 +9,7 @@ __Prerequisite__
 * Create IAM user and a user role having permission to execute Lambda. To know more about IAM please go through this [AWS Identity and Access Management Documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) 
 * Download this entire repository to your local system.
 
-__Steps to build and run your Alexa Greeter Skill__
+__Steps to build and run your Alexa Greeter Skill__  
 ___Step 1:___
 * Open [AWS Console](http://console.aws.amazon.com/console) and login with your valid user credentials. After you logged in, your screen will appear like this.
 
