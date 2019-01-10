@@ -11,5 +11,6 @@ __Prerequisite__
 
 __Steps to build and run your Alexa Greeter Skill__
 __Step 1:__
-* Open [AWS Console](https://console.aws.com/console) and login with your valid user credentials. After you logged in, your screen will appear like this.
+* Open [AWS Console](http://console.aws.amazon.com/console) and login with your valid user credentials. After you logged in, your screen will appear like this.
+
 ![AWS Management Console](https://user-images.githubusercontent.com/9292349/50949346-d8d0f400-14cb-11e9-9bc7-4d693fa49813.png) 
