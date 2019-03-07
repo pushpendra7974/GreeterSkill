@@ -2,6 +2,12 @@
 
 var http = require('http');
 exports.handler = function(event,context){
+
+    // Print the request
+    if(process.env.NODE_DEBUG_EN){        
+        console.log("Request:\n"+JSON.stringify(event,null,2));
+    }
+
     try
     {
         var request = event.request;
@@ -177,6 +183,10 @@ function getQuote(callback){
 
 function buildResponse(options){
 
+    if(process.env.NODE_DEBUG_EN){
+        console.log("Build Response:\n"+JSON.stringify(options,null,2));
+    }
+
     var response = {
         version: "1.0",
         response: {
@@ -215,8 +225,13 @@ function buildResponse(options){
         response.response.card.content = options.cardContent;
       } 
     }
+    
     if(options.session && options.session.attributes){
         response.sessionAttributes = options.session.attributes;
+    }
+
+    if(process.env.NODE_DEBUG_EN){
+        console.log("Response:\n"+JSON.stringify(response,null,2));
     }
 
     return response;
