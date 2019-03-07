@@ -19,7 +19,6 @@
                     "name": "AMAZON.StopIntent",
                     "samples": [
                         "good bye",
-                        "forget it",
                         "thanks"
                     ]
                 },
@@ -40,6 +39,23 @@
                         "greet our guest {FirstName}",
                         "wish our guest {FirstName}",
                         "say hello to {FirstName}"
+                    ]
+                },
+                {
+                    "name": "QuoteIntent",
+                    "slots": [],
+                    "samples": [
+                        "get a quote",
+                        "get me a quote"
+                    ]
+                },
+                {
+                    "name": "NextQuoteIntent",
+                    "slots": [],
+                    "samples": [
+                        "yes",
+                        "one more",
+                        "more"
                     ]
                 }
             ],
