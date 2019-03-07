@@ -1,5 +1,6 @@
 'use strict'
 
+var http = require('http');
 exports.handler = function(event,context){
     try
     {
@@ -27,9 +28,15 @@ exports.handler = function(event,context){
                 let name = request.intent.slots.FirstName.value;
                 options.speechText = "Hello "+ name + ". ";
                 options.speechText += getWish();
-                options.endSession = true;
-
-                context.succeed(buildResponse(options));
+                getQuote(function(quote,error){
+                    if(error){
+                        context.fail(error);
+                    }else{
+                        options.speechText += quote;
+                        options.endSession = true;
+                        context.succeed(buildResponse(options));
+                    }
+                });                
             }else{
                 throw "Unknown Intent Type";
             }
@@ -60,6 +67,27 @@ function getWish() {
     } else {
       return "Good evening. ";
     }  
+}
+
+function getQuote(callback){
+    var url="http://api.forismatic.com/api/1.0/json?method=getQuote&lang=en&format=json";
+    var req = http.get(url, function(res){
+        var body ="";
+
+        res.on('data',function(chunk){
+            body += chunk;
+        });
+
+        res.on('end',function(){
+            body = body.replace(/\\/g,'');
+            var quote = JSON.parse(body);
+            callback(quote.quoteText);
+        });
+    });
+
+    req.on('error',function(err){
+        callback('',err);
+    });
 }
 
 function buildResponse(options){
