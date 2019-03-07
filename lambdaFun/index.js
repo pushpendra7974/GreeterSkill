@@ -64,12 +64,16 @@ function handleHelloIntent(request, context) {
     let name = request.intent.slots.FirstName.value;
     options.speechText = "Hello " + name + ". ";
     options.speechText += getWish();
+    options.cardTitle = `Hello ${name}!`;
+
     getQuote(function (quote, error) {
         if (error) {
             context.fail(error);
         }
         else {
             options.speechText += quote;
+            options.cardContent = quote;
+            options.imageUrl = "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hello_smile.png";
             options.endSession = true;
             context.succeed(buildResponse(options));
         }
@@ -93,7 +97,10 @@ function handleQuoteIntent(request, context, session){
             context.fail(error);
         }
         else {
+            options.cardTitle ="Quote";
             options.speechText = quote;
+            options.cardContent = quote;
+            options.imageUrl = "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hello_smile.png";
             options.speechText += "Do you want to listen one more quote? ";
             options.repromptText = "You can say yes or one more. ";
             options.session.attributes.quoteIntent = true;
@@ -113,7 +120,10 @@ function handleNextQuoteIntent(request, context, session){
                 context.fail(error);
             }
             else {
+                options.cardTitle = "Quote";
                 options.speechText = quote;
+                options.cardContent = quote;
+                options.imageUrl = "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hello_smile.png";
                 options.speechText += "Do you want to listen one more quote? ";
                 options.repromptText = "You can say yes or one more. ";
                 //options.session.attributes.quoteIntent = true;
@@ -187,6 +197,24 @@ function buildResponse(options){
         };
     }
 
+    if(options.cardTitle) {
+        response.response.card = {
+          type: "Simple",
+          title: options.cardTitle
+        }
+
+    if(options.imageUrl) {
+        response.response.card.type = "Standard";
+        response.response.card.text = options.cardContent;
+        response.response.card.image = {
+          smallImageUrl: options.imageUrl,
+          largeImageUrl: options.imageUrl
+        };
+  
+      } else {
+        response.response.card.content = options.cardContent;
+      } 
+    }
     if(options.session && options.session.attributes){
         response.sessionAttributes = options.session.attributes;
     }
