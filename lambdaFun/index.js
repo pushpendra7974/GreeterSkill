@@ -96,8 +96,8 @@ function buildResponse(options){
         version: "1.0",
         response: {
             outputSpeech:{
-                type:"PlainText",
-                text: options.speechText
+                type:"SSML",
+                ssml: "<speak>"+options.speechText+"</speak>"
             },
             shouldEndSession: options.endSession
         }
@@ -106,8 +106,8 @@ function buildResponse(options){
     if(options.repromptText){
         response.response.reprompt = {
             outputSpeech :{
-                type : "PlainText",
-                text : options.repromptText
+                type : "SSML",
+                ssml : "<speak>"+options.repromptText+"</speak>"
             }
         };
     }

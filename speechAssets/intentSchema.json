@@ -17,7 +17,11 @@
                 },
                 {
                     "name": "AMAZON.StopIntent",
-                    "samples": []
+                    "samples": [
+                        "good bye",
+                        "forget it",
+                        "thanks"
+                    ]
                 },
                 {
                     "name": "AMAZON.NavigateHomeIntent",
