@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/pushpendra7974/GreeterSkill/issues"
   },
-  "homepage": "https://github.com/pushpendra7974/GreeterSkill#readme"
+  "homepage": "https://github.com/pushpendra7974/GreeterSkill#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
+  }
 }
