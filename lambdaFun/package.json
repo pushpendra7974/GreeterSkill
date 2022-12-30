@@ -22,6 +22,6 @@
   "homepage": "https://github.com/pushpendra7974/GreeterSkill#readme",
   "dependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.0.2"
+    "mocha": "^10.2.0"
   }
 }
